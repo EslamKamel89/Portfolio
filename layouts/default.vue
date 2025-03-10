@@ -6,16 +6,7 @@
           >Eslam Kamel</NuxtLink
         >
       </div>
-      <nav>
-        <ul class="flex gap-x-2 font-mono">
-          <li>
-            <NuxtLink to="/">Home </NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/about">About </NuxtLink>
-          </li>
-        </ul>
-      </nav>
+      <Menu />
     </header>
     <main class="p-2">
       <slot />
@@ -23,4 +14,6 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// import Menu from "~/components/Menu.vue";
+</script>
