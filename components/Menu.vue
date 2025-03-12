@@ -7,6 +7,9 @@
       <li>
         <NuxtLink id="link" to="/about">About </NuxtLink>
       </li>
+      <li>
+        <NuxtLink id="link" to="/projects">Projects </NuxtLink>
+      </li>
     </ul>
   </nav>
 </template>
