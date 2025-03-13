@@ -1,12 +1,13 @@
 <template>
   <div class="container mx-auto px-2 max-w-3xl mt-5">
     <header class="flex justify-between items-center">
-      <div>
+      <div class="flex gap-x-12 items-center">
         <NuxtLink to="/" class="text-2xl font-medium p-2 hover:bg-gray-200"
           >Eslam Kamel</NuxtLink
         >
+        <Menu />
       </div>
-      <Menu />
+      <ColorModeSelector />
     </header>
     <main class="p-2 mt-10">
       <slot />
@@ -15,8 +16,6 @@
 </template>
 
 <script setup lang="ts">
-import { pr } from "~/Utils/pr";
-
 useHead({
   bodyAttrs: { style: { fontFamily: "Roboto" } },
   titleTemplate: (title) => {
@@ -33,12 +32,6 @@ useHead({
       crossorigin: "",
     },
   ],
-});
-
-const colorMode = useColorMode();
-pr(colorMode.preference, "color preference");
-onMounted(() => {
-  colorMode.preference = "light";
 });
 </script>
 <style>
