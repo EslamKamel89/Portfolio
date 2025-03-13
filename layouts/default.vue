@@ -15,6 +15,8 @@
 </template>
 
 <script setup lang="ts">
+import { pr } from "~/Utils/pr";
+
 useHead({
   bodyAttrs: { style: { fontFamily: "Roboto" } },
   titleTemplate: (title) => {
@@ -32,5 +34,15 @@ useHead({
     },
   ],
 });
+
+const colorMode = useColorMode();
+pr(colorMode.preference, "color preference");
+onMounted(() => {
+  colorMode.preference = "light";
+});
 </script>
-<style></style>
+<style>
+body {
+  @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+}
+</style>
