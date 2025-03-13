@@ -4,11 +4,32 @@
   <div v-else-if="status.toString() == 'error'">
     Someting Went wrong... please try again later
   </div>
-  <div v-else-if="status.toString() == 'success'">Success</div>
+  <div v-else-if="status.toString() == 'success'">
+    <ul class="grid grid-cols-1 gap-4">
+      <li
+        v-for="project in data"
+        :key="project.id"
+        class="border border-gray-200 rounded-sm p-4 hover:bg-gray-100 font-mono"
+      >
+        <a :href="project.html_url" target="_blank" class="w-full inline-block">
+          <div class="flex items-center justify-between">
+            <div class="font-semibold">{{ project.name }}</div>
+            <div>{{ Math.floor(Math.random() * 4 + 1) }} ⭐</div>
+          </div>
+          <p class="text-sm">{{ project.description }}</p>
+        </a>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script setup lang="ts">
-const { data, error, execute, refresh, status } = useFetch(
+import type { Project } from "~/types/types";
+
+const { data, error, execute, refresh, status } = useFetch<Project[]>(
   "https://api.github.com/users/EslamKamel89/repos"
 );
+// $fetch("https://api.github.com/users/EslamKamel89/repos").then((res) =>
+//   console.log(res)
+// );
 </script>
