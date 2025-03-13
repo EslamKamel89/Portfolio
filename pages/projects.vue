@@ -1,7 +1,9 @@
 <template>
   <div>
     <h2 class="text-xl font-medium mb-10">Projects</h2>
-    <ProjectList />
+    <ClientOnly>
+      <ProjectList />
+    </ClientOnly>
   </div>
 </template>
 
