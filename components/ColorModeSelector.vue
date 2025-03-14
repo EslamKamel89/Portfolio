@@ -26,7 +26,7 @@ const modes: ColorThemeMode[] = ["light", "dark", "system"];
 const colorMode = useColorMode();
 const showNextModeLabel = ref<boolean>(false);
 onMounted(() => {
-  colorMode.preference = "light";
+  colorMode.preference = "dark";
 });
 const nextMode = computed<ColorThemeMode>(() => {
   if (colorMode.preference == "light") return "dark";
